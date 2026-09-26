@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caption X AE — تحميل</title>
+<meta name="description" content="حمّل Caption X لبرنامج Adobe After Effects — ويندوز وماك.">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#090e0c; --bg-deep:#04140d; --card:#0c1410; --field:#0a120e;
+    --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.14);
+    --accent:#4ee08a; --accent-2:#26a865; --accent-ink:#04140d;
+    --accent-soft:rgba(78,224,138,.10); --accent-line:rgba(78,224,138,.32); --accent-glow:rgba(78,224,138,.35);
+    --text:#eef6f1; --text-2:#cfdcd4; --muted:#869a91; --warn:#e0b34e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{
+    font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:var(--text);line-height:1.6;
+    background:
+      radial-gradient(900px 520px at 50% -10%, rgba(78,224,138,.16), transparent 70%),
+      linear-gradient(180deg,#0b1511 0%, var(--bg) 60%, var(--bg-deep) 100%);
+    background-color:var(--bg);
+  }
+  body::before{ /* faint grid */
+    content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:32px 32px;mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%);
+  }
+  .wrap{position:relative;max-width:760px;margin:0 auto;padding:40px 16px 56px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+  .brand{font-weight:900;font-size:20px;letter-spacing:-.01em;direction:ltr}
+  .brand b{color:var(--accent)} .brand small{font-size:12px;color:var(--muted);font-weight:700;margin-inline-start:4px}
+  .ver{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);padding:4px 10px;border:1px solid var(--line);border-radius:999px;direction:ltr}
+
+  .hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin-bottom:28px}
+  .mascot{width:132px;height:132px;filter:drop-shadow(0 0 22px var(--accent-glow))}
+  .mascot .eye{transform-box:fill-box;transform-origin:center;animation:blink 4.2s infinite}
+  .mascot .eye.r{animation:wink 4.2s infinite}
+  .mascot .body{transform-box:fill-box;transform-origin:center;animation:bob 3.2s ease-in-out infinite}
+  @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.12)}}
+  @keyframes wink{0%,60%,100%{transform:scaleY(1)}64%,70%{transform:scaleY(.12)}74%{transform:scaleY(1)}}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}
+  h1{font-size:clamp(26px,5vw,38px);font-weight:900;line-height:1.25;letter-spacing:-.01em}
+  h1 span{color:var(--accent)}
+  .lead{margin-top:8px;color:var(--text-2);font-size:16px}
+
+  .downloads{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 10px}
+  .dl{
+    display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;text-decoration:none;color:var(--text);
+    background:var(--card);border:1px solid var(--line-strong);transition:transform .15s,border-color .15s,background .15s,box-shadow .2s;
+  }
+  .dl:hover{transform:translateY(-2px);border-color:var(--accent-line)}
+  .dl:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .dl svg{width:30px;height:30px;flex-shrink:0}
+  .dl strong{display:block;font-size:17px;font-weight:800}
+  .dl small{display:block;color:var(--muted);font-size:12.5px;font-family:'IBM Plex Mono',monospace;direction:ltr;text-align:right}
+  .dl.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 10px 30px rgba(78,224,138,.25)}
+  .dl.primary small{color:rgba(4,20,13,.7)}
+  .dl.primary:hover{background:#5ee89a}
+  .hint{font-size:13px;color:var(--muted);text-align:center;margin-bottom:34px}
+  .hint a{color:var(--accent)}
+
+  section{background:rgba(12,20,16,.86);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:14px}
+  h2{font-size:18px;font-weight:800;margin-bottom:14px}
+  ol.steps{list-style:none;display:grid;gap:12px;counter-reset:s}
+  ol.steps li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;counter-increment:s;color:var(--text-2)}
+  ol.steps li::before{content:counter(s);display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--accent-soft);color:var(--accent);font-family:'IBM Plex Mono',monospace;font-weight:700}
+  ol.steps b{color:var(--text)}
+  .path{font-family:'IBM Plex Mono',monospace;font-size:13px;direction:ltr;display:inline-block;padding:1px 8px;border-radius:6px;background:var(--field);border:1px solid var(--line);color:var(--text)}
+  .notes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .note{padding:14px;border-radius:12px;background:var(--field);border:1px solid var(--line);font-size:14px;color:var(--text-2)}
+  .note strong{display:block;color:var(--warn);font-size:13.5px;margin-bottom:4px}
+  .req{display:flex;flex-wrap:wrap;gap:8px}
+  .req span{padding:6px 12px;border-radius:999px;background:var(--field);border:1px solid var(--line);font-size:13.5px;color:var(--text-2)}
+  footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13.5px}
+  footer a{color:var(--accent);font-family:'IBM Plex Mono',monospace;text-decoration:none}
+
+  @media (max-width:640px){
+    .wrap{padding-top:28px}
+    .hero{grid-template-columns:1fr;justify-items:center;text-align:center;gap:14px}
+    .mascot{width:108px;height:108px}
+    .downloads,.notes{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){ .mascot .eye,.mascot .body{animation:none} .dl{transition:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">Caption <b>X</b><small>AE</small></div>
+    <span class="ver" id="ver">latest</span>
+  </header>
+
+  <div class="hero">
+    <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5ee89a"/><stop offset="1" stop-color="#26a865"/></linearGradient></defs>
+      <g class="body">
+        <path d="M28 28 92 92M92 28 28 92" stroke="url(#g)" stroke-width="24" stroke-linecap="round" fill="none"/>
+        <g transform="translate(48 55)"><g class="eye"><ellipse rx="7.5" ry="9" fill="#eef6f1"/><circle cy="1" r="3.6" fill="#04140d"/></g></g>
+        <g transform="translate(72 55)"><g class="eye r"><ellipse rx="7.5" ry="9" fill="#eef6f1"/><circle cy="1" r="3.6" fill="#04140d"/></g></g>
+      </g>
+    </svg>
+    <div>
+      <h1>حمّل <span>Caption X</span> لـ After Effects</h1>
+      <p class="lead">كابشنز تلقائية بتوقيت كل كلمة، وأنيميشن جاهز بدوسة. والتحديثات الجاية هتوصلك جوه البلاجين لوحدها.</p>
+    </div>
+  </div>
+
+  <div class="downloads" id="downloads">
+    <a class="dl" id="dl-win" href="https://github.com/wacxgy-coder/captionx-releases/releases/latest/download/CaptionX_AE_Windows.exe">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.5v7H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>
+      <span><strong>ويندوز</strong><small>Windows 10 / 11 · .exe</small></span>
+    </a>
+    <a class="dl" id="dl-mac" href="https://github.com/wacxgy-coder/captionx-releases/releases/latest/download/CaptionX_AE_macOS.pkg">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>
+      <span><strong>ماك</strong><small>macOS · .pkg</small></span>
+    </a>
+  </div>
+  <p class="hint">بعد التحميل هتحتاج <b>إيميل الترخيص وكود التفعيل</b> بتوعك. كل النسخ: <a href="https://github.com/wacxgy-coder/captionx-releases/releases">صفحة الإصدارات</a></p>
+
+  <section>
+    <h2>خطوات التثبيت</h2>
+    <ol class="steps">
+      <li><span><b>اقفل After Effects</b> لو مفتوح.</span></li>
+      <li><span>شغّل الملف اللي نزّلته وكمّل الخطوات.</span></li>
+      <li><span>افتح After Effects وروح لـ <span class="path">Window › Extensions › CaptionX</span></span></li>
+      <li><span>اكتب <b>الإيميل</b> و<b>كود التفعيل</b> ودوس «تفعيل وتشغيل».</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>لو ظهرتلك رسالة أمان</h2>
+    <div class="notes">
+      <div class="note"><strong>ويندوز</strong>لو ظهرت «Windows protected your PC» دوس <b>More info</b> وبعدين <b>Run anyway</b>.</div>
+      <div class="note"><strong>ماك</strong>لو قالك المطوّر غير معروف: افتح <b>System Settings › Privacy &amp; Security</b> ودوس <b>Open Anyway</b>.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>المتطلبات</h2>
+    <div class="req"><span>After Effects 2022 أو أحدث</span><span>Windows 10 / 11</span><span>macOS 11 أو أحدث</span><span>اتصال بالإنترنت للتفعيل والتفريغ</span></div>
+  </section>
+
+  <footer>محتاج مساعدة؟ ابعتلنا على <a href="mailto:dmobadawy@gmail.com">dmobadawy@gmail.com</a></footer>
+</div>
+<script>
+  // Put the visitor's own system first.
+  (function(){
+    var mac=/Mac|iPhone|iPad/i.test(navigator.platform||navigator.userAgent);
+    var first=document.getElementById(mac?'dl-mac':'dl-win'), wrap=document.getElementById('downloads');
+    first.classList.add('primary'); wrap.insertBefore(first, wrap.firstChild);
+    fetch('https://api.github.com/repos/wacxgy-coder/captionx-releases/releases/latest')
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(j){ if(j&&j.tag_name) document.getElementById('ver').textContent=j.tag_name; })
+      .catch(function(){});
+  })();
+</script>
+</body>
+</html>
